@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7e8d65e3-418a-4d2a-9748-211b9a329fc3" name="Changes" comment="基本框架搭建">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-common-db/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-common/src/main/java/com/ordermeal/entity/PageResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-common/src/main/java/com/ordermeal/entity/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-common/src/main/java/com/ordermeal/entity/StatusCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-common/target/classes/com/ordermeal/entity/PageResult.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-common/target/classes/com/ordermeal/entity/Result.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-common/target/classes/com/ordermeal/entity/StatusCode.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-eureka/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-eureka/src/main/java/com/ordermeal/EurekaApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-eureka/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-eureka/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-eureka/target/classes/com/ordermeal/EurekaApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-gateway/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo/Album.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo/Brand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo/Log.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo/Para.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo/Pref.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo/Sku.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo/Spec.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo/Spu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo/Template.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/target/classes/com/ordermeal/goods/pojo/Album.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/target/classes/com/ordermeal/goods/pojo/Brand.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/target/classes/com/ordermeal/goods/pojo/Category.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/target/classes/com/ordermeal/goods/pojo/Log.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/target/classes/com/ordermeal/goods/pojo/Para.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/target/classes/com/ordermeal/goods/pojo/Pref.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/target/classes/com/ordermeal/goods/pojo/Sku.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/target/classes/com/ordermeal/goods/pojo/Spec.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/target/classes/com/ordermeal/goods/pojo/Spu.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/target/classes/com/ordermeal/goods/pojo/Template.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/GoodsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/controller/BrandController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/dao/BrandMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/service/BrandService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/service/impl/BrandServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/target/classes/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/target/classes/com/ordermeal/goods/GoodsApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/target/classes/com/ordermeal/goods/controller/BrandController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/target/classes/com/ordermeal/goods/dao/BrandMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/target/classes/com/ordermeal/goods/service/BrandService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/target/classes/com/ordermeal/goods/service/impl/BrandServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$USER_HOME$/Develop/apache-maven-3.8.3" />
+        <option name="userSettingsFile" value="$USER_HOME$/Develop/apache-maven-3.8.3/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="235XodXFSYuxhWMAwAhhf9DwZb7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.27011493" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
+  </component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo" />
+      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-gateway" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.GoodsApplication">
+    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ordermeal-eureka" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ordermeal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ordermeal.EurekaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GoodsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ordermeal-service-goods" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ordermeal.goods.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ordermeal.goods.GoodsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.GoodsApplication" />
+        <item itemvalue="Spring Boot.EurekaApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7e8d65e3-418a-4d2a-9748-211b9a329fc3" name="Changes" comment="" />
+      <created>1641025102405</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641025102405</updated>
+      <workItem from="1641025105128" duration="6793000" />
+      <workItem from="1641034074522" duration="1114000" />
+      <workItem from="1641035202299" duration="5720000" />
+      <workItem from="1641083412863" duration="10266000" />
+      <workItem from="1641102031638" duration="6673000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="基本框架搭建" />
+    <option name="LAST_COMMIT_MESSAGE" value="基本框架搭建" />
+  </component>
+</project>
