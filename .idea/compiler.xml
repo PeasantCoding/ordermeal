@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ordermeal-service-goods-api" />
         <module name="ordermeal-common-db" />
+        <module name="ordermeal-service-file" />
         <module name="ordermeal-common" />
         <module name="ordermeal-eureka" />
         <module name="ordermeal-service-goods" />
@@ -28,6 +29,7 @@
       <module name="ordermeal-parent" options="-parameters" />
       <module name="ordermeal-service" options="-parameters" />
       <module name="ordermeal-service-api" options="-parameters" />
+      <module name="ordermeal-service-file" options="-parameters" />
       <module name="ordermeal-service-goods" options="-parameters" />
       <module name="ordermeal-service-goods-api" options="-parameters" />
       <module name="ordermeal-web" options="-parameters" />
