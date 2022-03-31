@@ -2,10 +2,9 @@ package com.ordermeal.goods.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.ordermeal.goods.dao.CategoryMapper;
 import com.ordermeal.goods.dao.SpecMapper;
-import com.ordermeal.goods.dao.TemplateMapper;
 import com.ordermeal.goods.pojo.Spec;
-import com.ordermeal.goods.pojo.Template;
 import com.ordermeal.goods.service.SpecService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +13,11 @@ import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
+/****
+ * @Author:shenkunlin
+ * @Description:Spec业务层接口实现类
+ * @Date 2019/6/14 0:16
+ *****/
 @Service
 public class SpecServiceImpl implements SpecService {
 
@@ -21,7 +25,8 @@ public class SpecServiceImpl implements SpecService {
     private SpecMapper specMapper;
 
     @Autowired
-    private TemplateMapper templateMapper;
+    private CategoryMapper categoryMapper;
+
 
     /**
      * Spec条件+分页查询
@@ -79,23 +84,23 @@ public class SpecServiceImpl implements SpecService {
         if(spec!=null){
             // ID
             if(!StringUtils.isEmpty(spec.getId())){
-                criteria.andEqualTo("id",spec.getId());
+                    criteria.andEqualTo("id",spec.getId());
             }
             // 名称
             if(!StringUtils.isEmpty(spec.getName())){
-                criteria.andLike("name","%"+spec.getName()+"%");
+                    criteria.andLike("name","%"+spec.getName()+"%");
             }
             // 规格选项
             if(!StringUtils.isEmpty(spec.getOptions())){
-                criteria.andEqualTo("options",spec.getOptions());
+                    criteria.andEqualTo("options",spec.getOptions());
             }
             // 排序
             if(!StringUtils.isEmpty(spec.getSeq())){
-                criteria.andEqualTo("seq",spec.getSeq());
+                    criteria.andEqualTo("seq",spec.getSeq());
             }
             // 模板ID
             if(!StringUtils.isEmpty(spec.getTemplateId())){
-                criteria.andEqualTo("templateId",spec.getTemplateId());
+                    criteria.andEqualTo("templateId",spec.getTemplateId());
             }
         }
         return example;
@@ -107,12 +112,6 @@ public class SpecServiceImpl implements SpecService {
      */
     @Override
     public void delete(Integer id){
-        //查询模板
-        Spec spec = specMapper.selectByPrimaryKey(id);
-        //变更模板数量
-        updateSpecNum(spec,-1);
-
-        //删除指定规格
         specMapper.deleteByPrimaryKey(id);
     }
 
@@ -132,8 +131,6 @@ public class SpecServiceImpl implements SpecService {
     @Override
     public void add(Spec spec){
         specMapper.insert(spec);
-        //变更模板数量
-        updateSpecNum(spec,1);
     }
 
     /**
@@ -155,17 +152,15 @@ public class SpecServiceImpl implements SpecService {
         return specMapper.selectAll();
     }
 
-
     /**
-     * 修改模板统计数据
-     * @param spec:操作的模板
-     * @param count:变更的数量
+     * 根据分类ID查询规格列表
      */
-    public void updateSpecNum(Spec spec,int count){
-        //修改模板数量统计
-        Template template = templateMapper.selectByPrimaryKey(spec.getTemplateId());
-        template.setSpecNum(template.getSpecNum()+count);
-        templateMapper.updateByPrimaryKeySelective(template);
+    @Override
+    public List<Spec> findByCategoryId(Integer cid) {
+        Integer templateId = categoryMapper.selectByPrimaryKey(cid).getTemplateId();
+        Spec spec = new Spec();
+        spec.setTemplateId(templateId);
+        List<Spec> specList = specMapper.select(spec);
+        return specList;
     }
-
 }

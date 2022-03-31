@@ -1,5 +1,7 @@
 package com.ordermeal.goods.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.ordermeal.goods.dao.BrandMapper;
 import com.ordermeal.goods.pojo.Brand;
 import com.ordermeal.goods.service.BrandService;
@@ -10,62 +12,51 @@ import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
+/****
+ * @Author:shenkunlin
+ * @Description:Brand业务层接口实现类
+ * @Date 2019/6/14 0:16
+ *****/
 @Service
 public class BrandServiceImpl implements BrandService {
 
     @Autowired
     private BrandMapper brandMapper;
 
+
     /**
-     * 查询全部数据
+     * Brand条件+分页查询
+     * @param brand 查询条件
+     * @param page 页码
+     * @param size 页大小
+     * @return 分页结果
+     */
+    @Override
+    public PageInfo<Brand> findPage(Brand brand, int page, int size){
+        //分页
+        PageHelper.startPage(page,size);
+        //搜索条件构建
+        Example example = createExample(brand);
+        //执行搜索
+        return new PageInfo<Brand>(brandMapper.selectByExample(example));
+    }
+
+    /**
+     * Brand分页查询
+     * @param page
+     * @param size
      * @return
      */
     @Override
-    public List<Brand> findAll() {
-        return brandMapper.selectAll();
-    }
-
-
-    /**
-     * 根据ID查询
-     * @param id
-     * @return
-     */
-    @Override
-    public Brand findById(Integer id){
-        return  brandMapper.selectByPrimaryKey(id);
+    public PageInfo<Brand> findPage(int page, int size){
+        //静态分页
+        PageHelper.startPage(page,size);
+        //分页查询
+        return new PageInfo<Brand>(brandMapper.selectAll());
     }
 
     /**
-     * 增加
-     * @param brand
-     */
-    @Override
-    public void add(Brand brand){
-        brandMapper.insert(brand);
-    }
-
-    /**
-     * 修改
-     * @param brand
-     */
-    @Override
-    public void update(Brand brand){
-        brandMapper.updateByPrimaryKey(brand);
-    }
-
-
-    /**
-     * 删除
-     * @param id
-     */
-    @Override
-    public void delete(Integer id){
-        brandMapper.deleteByPrimaryKey(id);
-    }
-
-    /**
-     * 条件查询
+     * Brand条件查询
      * @param brand
      * @return
      */
@@ -79,7 +70,7 @@ public class BrandServiceImpl implements BrandService {
 
 
     /**
-     * 构建查询对象
+     * Brand构建查询对象
      * @param brand
      * @return
      */
@@ -87,27 +78,84 @@ public class BrandServiceImpl implements BrandService {
         Example example=new Example(Brand.class);
         Example.Criteria criteria = example.createCriteria();
         if(brand!=null){
+            // 品牌id
+            if(!StringUtils.isEmpty(brand.getId())){
+                    criteria.andEqualTo("id",brand.getId());
+            }
             // 品牌名称
             if(!StringUtils.isEmpty(brand.getName())){
-                criteria.andLike("name","%"+brand.getName()+"%");
+                    criteria.andLike("name","%"+brand.getName()+"%");
             }
             // 品牌图片地址
             if(!StringUtils.isEmpty(brand.getImage())){
-                criteria.andLike("image","%"+brand.getImage()+"%");
+                    criteria.andEqualTo("image",brand.getImage());
             }
             // 品牌的首字母
             if(!StringUtils.isEmpty(brand.getLetter())){
-                criteria.andLike("letter","%"+brand.getLetter()+"%");
-            }
-            // 品牌id
-            if(!StringUtils.isEmpty(brand.getLetter())){
-                criteria.andEqualTo("id",brand.getId());
+                    criteria.andEqualTo("letter",brand.getLetter());
             }
             // 排序
             if(!StringUtils.isEmpty(brand.getSeq())){
-                criteria.andEqualTo("seq",brand.getSeq());
+                    criteria.andEqualTo("seq",brand.getSeq());
             }
         }
         return example;
+    }
+
+    /**
+     * 删除
+     * @param id
+     */
+    @Override
+    public void delete(Integer id){
+        brandMapper.deleteByPrimaryKey(id);
+    }
+
+    /**
+     * 修改Brand
+     * @param brand
+     */
+    @Override
+    public void update(Brand brand){
+        brandMapper.updateByPrimaryKey(brand);
+    }
+
+    /**
+     * 增加Brand
+     * @param brand
+     */
+    @Override
+    public void add(Brand brand){
+        brandMapper.insert(brand);
+    }
+
+    /**
+     * 根据ID查询Brand
+     * @param id
+     * @return
+     */
+    @Override
+    public Brand findById(Integer id){
+        return  brandMapper.selectByPrimaryKey(id);
+    }
+
+    /**
+     * 查询Brand全部数据
+     * @return
+     */
+    @Override
+    public List<Brand> findAll() {
+        return brandMapper.selectAll();
+    }
+
+
+    /**
+     * 根据CID查询所有相关品牌
+     * @param cid
+     * @return
+     */
+    @Override
+    public List<Brand> findByCatrgoryId(Integer cid) {
+        return brandMapper.findByCatrgoryId(cid);
     }
 }

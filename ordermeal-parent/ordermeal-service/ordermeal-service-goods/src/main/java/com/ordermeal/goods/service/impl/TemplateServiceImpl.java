@@ -12,11 +12,17 @@ import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 
+/****
+ * @Author:shenkunlin
+ * @Description:Template业务层接口实现类
+ * @Date 2019/6/14 0:16
+ *****/
 @Service
 public class TemplateServiceImpl implements TemplateService {
 
     @Autowired
     private TemplateMapper templateMapper;
+
 
     /**
      * Template条件+分页查询
@@ -64,6 +70,35 @@ public class TemplateServiceImpl implements TemplateService {
 
 
     /**
+     * Template构建查询对象
+     * @param template
+     * @return
+     */
+    public Example createExample(Template template){
+        Example example=new Example(Template.class);
+        Example.Criteria criteria = example.createCriteria();
+        if(template!=null){
+            // ID
+            if(!StringUtils.isEmpty(template.getId())){
+                    criteria.andEqualTo("id",template.getId());
+            }
+            // 模板名称
+            if(!StringUtils.isEmpty(template.getName())){
+                    criteria.andLike("name","%"+template.getName()+"%");
+            }
+            // 规格数量
+            if(!StringUtils.isEmpty(template.getSpecNum())){
+                    criteria.andEqualTo("specNum",template.getSpecNum());
+            }
+            // 参数数量
+            if(!StringUtils.isEmpty(template.getParaNum())){
+                    criteria.andEqualTo("paraNum",template.getParaNum());
+            }
+        }
+        return example;
+    }
+
+    /**
      * 删除
      * @param id
      */
@@ -107,35 +142,5 @@ public class TemplateServiceImpl implements TemplateService {
     @Override
     public List<Template> findAll() {
         return templateMapper.selectAll();
-    }
-
-
-    /**
-     * Template构建查询对象
-     * @param template
-     * @return
-     */
-    public Example createExample(Template template){
-        Example example=new Example(Template.class);
-        Example.Criteria criteria = example.createCriteria();
-        if(template!=null){
-            // ID
-            if(!StringUtils.isEmpty(template.getId())){
-                criteria.andEqualTo("id",template.getId());
-            }
-            // 模板名称
-            if(!StringUtils.isEmpty(template.getName())){
-                criteria.andLike("name","%"+template.getName()+"%");
-            }
-            // 规格数量
-            if(!StringUtils.isEmpty(template.getSpecNum())){
-                criteria.andEqualTo("specNum",template.getSpecNum());
-            }
-            // 参数数量
-            if(!StringUtils.isEmpty(template.getParaNum())){
-                criteria.andEqualTo("paraNum",template.getParaNum());
-            }
-        }
-        return example;
     }
 }

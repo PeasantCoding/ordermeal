@@ -1,14 +1,17 @@
 package com.ordermeal.goods.service;
 
-
 import com.github.pagehelper.PageInfo;
 import com.ordermeal.goods.pojo.Template;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+/****
+ * @Author:shenkunlin
+ * @Description:Template业务层接口
+ * @Date 2019/6/14 0:16
+ *****/
 public interface TemplateService {
+
     /***
      * Template多条件分页查询
      * @param template
@@ -56,12 +59,11 @@ public interface TemplateService {
      * @param id
      * @return
      */
-    Template findById(Integer id);
+     Template findById(Integer id);
 
     /***
      * 查询所有Template
      * @return
      */
     List<Template> findAll();
-
 }

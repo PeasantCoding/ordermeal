@@ -5,7 +5,13 @@ import com.ordermeal.goods.pojo.Spec;
 
 import java.util.List;
 
+/****
+ * @Author:shenkunlin
+ * @Description:Spec业务层接口
+ * @Date 2019/6/14 0:16
+ *****/
 public interface SpecService {
+
     /***
      * Spec多条件分页查询
      * @param spec
@@ -53,7 +59,7 @@ public interface SpecService {
      * @param id
      * @return
      */
-    Spec findById(Integer id);
+     Spec findById(Integer id);
 
     /***
      * 查询所有Spec
@@ -61,5 +67,8 @@ public interface SpecService {
      */
     List<Spec> findAll();
 
-
+    /**
+     * 根据分类ID查询规格列表
+     */
+    List<Spec> findByCategoryId(Integer cid);
 }
