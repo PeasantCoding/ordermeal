@@ -3,32 +3,24 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ordermeal-parent</artifactId>
+        <artifactId>ordermeal-service</artifactId>
         <groupId>com.ordermeal</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <modules>
-        <module>ordermeal-service-goods-api</module>
-        <module>ordermeal-service-content-api</module>
-    </modules>
-    <artifactId>ordermeal-service-api</artifactId>
+
+    <artifactId>changgou-service-content</artifactId>
 
     <dependencies>
-        <!--通用的common-->
         <dependency>
             <groupId>com.ordermeal</groupId>
             <artifactId>ordermeal-common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-
-        <!--每个工程都有Pojo，都需要用到该包对应的注解-->
         <dependency>
-            <groupId>javax.persistence</groupId>
-            <artifactId>persistence-api</artifactId>
-            <version>1.0</version>
-            <scope>compile</scope>
+            <groupId>com.ordermeal</groupId>
+            <artifactId>ordermeal-service-content-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

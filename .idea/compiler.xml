@@ -7,16 +7,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ordermeal-service-content" />
         <module name="ordermeal-service-goods-api" />
+        <module name="ordermeal-service-canal" />
         <module name="ordermeal-common-db" />
         <module name="ordermeal-common" />
         <module name="ordermeal-eureka" />
         <module name="ordermeal-service-goods" />
+        <module name="code-template" />
         <module name="ordermeal-service-file" />
+        <module name="ordermeal-service-content-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="code-template" target="1.5" />
       <module name="ordermeal" target="8" />
       <module name="untitled" target="8" />
     </bytecodeTargetLevel>
@@ -30,6 +33,9 @@
       <module name="ordermeal-parent" options="-parameters" />
       <module name="ordermeal-service" options="-parameters" />
       <module name="ordermeal-service-api" options="-parameters" />
+      <module name="ordermeal-service-canal" options="-parameters" />
+      <module name="ordermeal-service-content" options="-parameters" />
+      <module name="ordermeal-service-content-api" options="-parameters" />
       <module name="ordermeal-service-file" options="-parameters" />
       <module name="ordermeal-service-goods" options="-parameters" />
       <module name="ordermeal-service-goods-api" options="-parameters" />
