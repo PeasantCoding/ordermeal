@@ -7,34 +7,24 @@
     <option name="showLiveBeansGraph" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e8d65e3-418a-4d2a-9748-211b9a329fc3" name="Changes" comment="后台对商品操作">
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-content-api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-content-api/src/main/java/com/ordermeal/content/feign/ContentFeign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-content-api/src/main/java/com/ordermeal/content/pojo/Content.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-content-api/src/main/java/com/ordermeal/content/pojo/ContentCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-canal/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-canal/src/main/java/com/ordermeal/CanalApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-canal/src/main/java/com/ordermeal/canal/listener/CanalDataEventListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-canal/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java/com/ordermeal/ContentApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java/com/ordermeal/content/controller/ContentCategoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java/com/ordermeal/content/controller/ContentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java/com/ordermeal/content/dao/ContentCategoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java/com/ordermeal/content/dao/ContentMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java/com/ordermeal/content/service/ContentCategoryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java/com/ordermeal/content/service/ContentService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java/com/ordermeal/content/service/impl/ContentCategoryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java/com/ordermeal/content/service/impl/ContentServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java/com/ordermeal/swagger/swagger.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="7e8d65e3-418a-4d2a-9748-211b9a329fc3" name="Changes" comment="Canal同步Mysql和Redis中的广告表数据">
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/feign/SkuFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-search-api/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-search-api/src/main/java/com/ordermeal/search/pojo/SkuInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/SearchApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/controller/SkuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/dao/SkuEsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/service/SkuService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/service/impl/SkuServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/controller/SkuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/controller/SkuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/service/SkuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/service/SkuService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/service/impl/SkuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/service/impl/SkuServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -76,8 +66,8 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RequestMappingsPanelOrder0" value="0" />
@@ -125,20 +115,7 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Spring Boot.ContentApplication">
-    <configuration name="CodeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.itheima.CodeApplication" />
-      <module name="code-template" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.itheima.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Spring Boot.EurekaApplication">
     <configuration name="CanalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="ordermeal-service-canal" />
       <extension name="coverage">
@@ -193,20 +170,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ordermeal-service-search" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ordermeal.search.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ordermeal.search.SearchApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.CodeApplication" />
       <item itemvalue="Spring Boot.GoodsApplication" />
       <item itemvalue="Spring Boot.EurekaApplication" />
       <item itemvalue="Spring Boot.CanalApplication" />
       <item itemvalue="Spring Boot.ContentApplication" />
+      <item itemvalue="Spring Boot.SearchApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.CanalApplication" />
-        <item itemvalue="Spring Boot.ContentApplication" />
+        <item itemvalue="Spring Boot.SearchApplication" />
         <item itemvalue="Spring Boot.GoodsApplication" />
         <item itemvalue="Spring Boot.EurekaApplication" />
-        <item itemvalue="Application.CodeApplication" />
+        <item itemvalue="Spring Boot.ContentApplication" />
+        <item itemvalue="Spring Boot.CanalApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +234,9 @@
       <workItem from="1648714274102" duration="59000" />
       <workItem from="1648714336201" duration="1543000" />
       <workItem from="1648719885882" duration="8697000" />
-      <workItem from="1648885277059" duration="11692000" />
+      <workItem from="1648885277059" duration="26344000" />
+      <workItem from="1649163693100" duration="314000" />
+      <workItem from="1649164155515" duration="1922000" />
     </task>
     <task id="LOCAL-00001" summary="基本框架搭建">
       <created>1641109352308</created>
@@ -267,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648713016857</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Canal同步Mysql和Redis中的广告表数据">
+      <created>1648984002024</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1648984002024</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,7 +305,8 @@
     <MESSAGE value="基本框架搭建" />
     <MESSAGE value="商品模块CRUD，加入FDFS" />
     <MESSAGE value="后台对商品操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="后台对商品操作" />
+    <MESSAGE value="Canal同步Mysql和Redis中的广告表数据" />
+    <option name="LAST_COMMIT_MESSAGE" value="Canal同步Mysql和Redis中的广告表数据" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -315,6 +315,11 @@
         <PinnedItemInfo parentTag="org.csource.fastdfs.TrackerGroup" memberName="tracker_servers" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="((ServletInvocableHandlerMethod)this).logger" custom="org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

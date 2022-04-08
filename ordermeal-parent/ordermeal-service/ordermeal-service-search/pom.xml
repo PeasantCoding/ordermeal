@@ -3,20 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>ordermeal-parent</artifactId>
+        <artifactId>ordermeal-service</artifactId>
         <groupId>com.ordermeal</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <modules>
-        <module>ordermeal-service-goods</module>
-        <module>ordermeal-service-file</module>
-        <module>ordermeal-service-canal</module>
-        <module>ordermeal-service-content</module>
-        <module>ordermeal-service-search</module>
-    </modules>
-    <artifactId>ordermeal-service</artifactId>
+
+    <artifactId>ordermeal-service-search</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -24,10 +17,18 @@
     </properties>
 
     <dependencies>
+        <!--依赖search api-->
         <dependency>
             <groupId>com.ordermeal</groupId>
-            <artifactId>ordermeal-common-db</artifactId>
+            <artifactId>ordermeal-service-goods-api</artifactId>
             <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.ordermeal</groupId>
+            <artifactId>ordermeal-service-search-api</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

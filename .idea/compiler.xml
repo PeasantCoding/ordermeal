@@ -15,8 +15,10 @@
         <module name="ordermeal-eureka" />
         <module name="ordermeal-service-goods" />
         <module name="code-template" />
+        <module name="ordermeal-service-search" />
         <module name="ordermeal-service-file" />
         <module name="ordermeal-service-content-api" />
+        <module name="ordermeal-service-search-api" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -39,6 +41,8 @@
       <module name="ordermeal-service-file" options="-parameters" />
       <module name="ordermeal-service-goods" options="-parameters" />
       <module name="ordermeal-service-goods-api" options="-parameters" />
+      <module name="ordermeal-service-search" options="-parameters" />
+      <module name="ordermeal-service-search-api" options="-parameters" />
       <module name="ordermeal-web" options="-parameters" />
       <module name="untitled" options="-parameters" />
     </option>
