@@ -12,5 +12,7 @@
     <file url="file://$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-file/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/java" charset="UTF-8" />
   </component>
 </project>

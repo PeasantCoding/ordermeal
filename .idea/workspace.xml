@@ -7,25 +7,590 @@
     <option name="showLiveBeansGraph" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7e8d65e3-418a-4d2a-9748-211b9a329fc3" name="Changes" comment="Canal同步Mysql和Redis中的广告表数据">
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/feign/SkuFeign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-search-api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-search-api/src/main/java/com/ordermeal/search/pojo/SkuInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/SearchApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/controller/SkuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/dao/SkuEsMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/service/SkuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/service/impl/SkuServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="7e8d65e3-418a-4d2a-9748-211b9a329fc3" name="Changes" comment="商品信息导入ES，商品搜索功能">
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-common/src/main/java/com/ordermeal/entity/Page.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/feign/CategoryFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/feign/SpuFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-search-api/src/main/java/com/ordermeal/search/feign/SkuFeign.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/service/impl/SearchResultMapperImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/java/com/ordermeal/item/ItemApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/java/com/ordermeal/item/config/EnableMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/java/com/ordermeal/item/controller/PageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/java/com/ordermeal/item/service/PageService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/java/com/ordermeal/item/service/impl/PageServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-JD-index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-addressList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-application.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-cooperation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-getOrderInfo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-login-manage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-myOrder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-mycomment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-pay.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-payconfirm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-payfail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-paysuccess.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-sampling.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-seckill-index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-seckill-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-seckillOrder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-shop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-shoplogin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-success-cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-weixinpay.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/pages-zoom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/widget-cartPanelView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/css/widget-jquery.autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/autocomplete.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/catalogSearch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/list-data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/nav-data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/orders.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/productAlso.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/productChoiceness.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/productGuess.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/productInfo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/productList.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/productRelationship.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/shoplist-data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/shoplist.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/data/success.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-moon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-moon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-moon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-moon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-pc.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-pc.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-pc.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-pc.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-tb.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-tb.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-tb.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-tb.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-touch.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-touch.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-touch.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/icon-touch.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/fonts/lll.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/Arrow_left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/Arrow_right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/b1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/b2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/b3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/bg-who1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/buy001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/buy002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/buy01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/car.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/code.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/cooperation_banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/down-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/dp01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/dp02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/dp03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/dp04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/empty_heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/erweima.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/fail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/gocart.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/gocart01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/goods1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/gotop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/icon-red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/intro01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/intro02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/intro03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/itemlike01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/itemlike02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/itemlike03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/itemlike04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/itemlike05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/itemlike06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/l-m01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/list.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/login-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/manage-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/mobile01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/mobile02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/mobile03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/mobile04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/mobile05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/mobile06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/part01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/part02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/part03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/pay5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/phone14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/photo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/photo_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/s1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/s2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/s3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/sampling_head.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/seckillbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/shi_heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/shop-intro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/shop-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/shop-part.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/t.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/title_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/_/y24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/account.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/ad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/ad1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/addimg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/ali.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/banner1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/banner3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/banner4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/barrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand_03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand_05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand_07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand_09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand_11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand_17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand_19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/brand_21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/cartPanelViewIcons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/choosed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/duihuan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/erweima.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/floor-1-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/floor-1-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/floor-1-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/floor-1-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/floor-1-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/floor-1-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/floor-1-b01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/floor-1-b02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/floor-1-b03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/goods.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/interest01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/interest02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/interest03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/interest04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/interest05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/interest06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/like1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/like2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/like3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/like4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/like_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/like_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/like_03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/like_04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/like_05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/like_06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/linker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/loginbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/mod-list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/paylogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/photo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/qq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/quan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/sina.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/today01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/today02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/today03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/today04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/weixin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/wx_cz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/img/zoom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/axios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/model/cartModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/addressList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/city-picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/jquery.slideunlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/login-manage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/person-collect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/person-footmark.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/seckill-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/shop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/shoplogin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/sm-city-picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/pages/updateimg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/plugins/jquery.jqzoom/jquery.jqzoom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/plugins/jquery.jqzoom/zoom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/plugins/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/plugins/sui/sui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/static/js/widget/cartPanelView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/templates/item.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/java/com/ordermeal/SearchWebApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/java/com/ordermeal/search/controller/SkuController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/all.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-JD-index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-addressList.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-application.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-cooperation.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-getOrderInfo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-home.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-list.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-login-manage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-myOrder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-mycomment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-pay.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-payconfirm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-payfail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-paysuccess.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-register.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-sampling.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-seckill-index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-seckill-item.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-seckillOrder.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-shop.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-shoplogin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-success-cart.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-weixinpay.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/pages-zoom.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/widget-cartPanelView.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/css/widget-jquery.autocomplete.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/autocomplete.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/catalogSearch.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/list-data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/nav-data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/orders.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/productAlso.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/productChoiceness.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/productGuess.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/productInfo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/productList.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/productRelationship.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/shoplist-data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/shoplist.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/data/success.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-moon.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-moon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-moon.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-moon.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-pc.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-pc.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-pc.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-pc.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-tb.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-tb.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-tb.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-tb.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-touch.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-touch.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-touch.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/fonts/icon-touch.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/Arrow_left.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/Arrow_right.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/Logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/b1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/b2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/b3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/banner.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/bg-who1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/buy001.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/buy002.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/buy01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/car.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/code.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/cooperation_banner.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/down-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/dp01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/dp02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/dp03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/dp04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/empty_heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/erweima.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/fail.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/gocart.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/gocart01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/goods1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/gotop.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/icon-red.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/intro01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/intro02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/intro03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/itemlike01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/itemlike02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/itemlike03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/itemlike04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/itemlike05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/itemlike06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/l-m01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/list.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/login-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/manage-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/mobile01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/mobile02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/mobile03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/mobile04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/mobile05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/mobile06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/part01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/part02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/part03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay18.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay19.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay20.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay21.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay22.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/pay5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone-bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/phone14.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/photo.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/photo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/photo_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/s1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/s2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/s3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/sampling_head.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/seckillbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/shi_heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/shop-intro.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/shop-logo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/shop-part.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/t.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/title_bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/_/y24.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/account.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/ad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/ad1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/addimg.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/ali.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/banner1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/banner1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/banner2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/banner3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/banner4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/barrow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand08.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand12.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand_03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand_05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand_07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand_09.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand_11.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand_13.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand_15.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand_17.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand_19.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/brand_21.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/cartPanelViewIcons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/choosed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/clock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/delete.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/delete.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/duihuan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/erweima.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/floor-1-1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/floor-1-2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/floor-1-3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/floor-1-4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/floor-1-5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/floor-1-6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/floor-1-b01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/floor-1-b02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/floor-1-b03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/goods.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/icons.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/interest01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/interest02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/interest03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/interest04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/interest05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/interest06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/like1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/like2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/like3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/like4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/like_01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/like_02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/like_03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/like_04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/like_05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/like_06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/linker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/lock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/loginbg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/mod-list.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/paylogo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/photo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/qq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/quan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/sina.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/today01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/today02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/today03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/today04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/weixin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/wx_cz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/img/zoom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/model/cartModel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/addressList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/city-picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/jquery.slideunlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/login-manage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/person-collect.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/person-footmark.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/register.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/seckill-index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/shop.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/shoplogin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/sm-city-picker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/pages/updateimg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/plugins/jquery.jqzoom/jquery.jqzoom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/plugins/jquery.jqzoom/zoom.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/plugins/jquery/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/plugins/sui/sui.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/static/js/widget/cartPanelView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/templates/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/controller/SkuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/controller/SkuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/service/SkuService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/service/SkuService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/service/impl/SkuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-goods/src/main/java/com/ordermeal/goods/service/impl/SkuServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/feign/SkuFeign.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/feign/SkuFeign.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/controller/SkuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/controller/SkuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/service/impl/SkuServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-search/src/main/java/com/ordermeal/search/service/impl/SkuServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +645,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="jdk.selected.JAVA_MODULE" value="1.8" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-content-api/src/main/java/com/ordermeal/content" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-content-api/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.27011493" />
@@ -94,13 +659,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-content-api/src/main/java" />
-      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/java" />
-      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/changgou-service-content-api/src/main/resources" />
-      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-canal/src/main/resources" />
-      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-service-api/ordermeal-service-goods-api/src/main/java/com/ordermeal/goods/pojo" />
+      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources" />
+      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/templates/items" />
+      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/ordermeal-web-search/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-search/src/main/resources/static" />
+      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-search/src/main/resources/templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/resources/templates" />
+      <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/java" />
       <recent name="$PROJECT_DIR$/ordermeal-parent/ordermeal-service/ordermeal-service-content/src/main/resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -115,7 +682,7 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Spring Boot.EurekaApplication">
+  <component name="RunManager" selected="Spring Boot.ItemApplication">
     <configuration name="CanalApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="ordermeal-service-canal" />
       <extension name="coverage">
@@ -125,32 +692,6 @@
         </pattern>
       </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ordermeal.CanalApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContentApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="ordermeal-service-content" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ordermeal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ordermeal.ContentApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="EurekaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="ordermeal-eureka" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ordermeal.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ordermeal.EurekaApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -170,6 +711,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ItemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="changgou-web-item" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ordermeal.item.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ordermeal.item.ItemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SearchApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="ordermeal-service-search" />
       <extension name="coverage">
@@ -183,19 +737,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SearchWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="ordermeal-web-search" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ordermeal.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ordermeal.SearchWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Spring Boot.GoodsApplication" />
-      <item itemvalue="Spring Boot.EurekaApplication" />
       <item itemvalue="Spring Boot.CanalApplication" />
-      <item itemvalue="Spring Boot.ContentApplication" />
       <item itemvalue="Spring Boot.SearchApplication" />
+      <item itemvalue="Spring Boot.SearchWebApplication" />
+      <item itemvalue="Spring Boot.ItemApplication" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.SearchApplication" />
+        <item itemvalue="Spring Boot.ItemApplication" />
         <item itemvalue="Spring Boot.GoodsApplication" />
-        <item itemvalue="Spring Boot.EurekaApplication" />
-        <item itemvalue="Spring Boot.ContentApplication" />
+        <item itemvalue="Spring Boot.SearchWebApplication" />
+        <item itemvalue="Spring Boot.SearchApplication" />
         <item itemvalue="Spring Boot.CanalApplication" />
       </list>
     </recent_temporary>
@@ -237,6 +804,7 @@
       <workItem from="1648885277059" duration="26344000" />
       <workItem from="1649163693100" duration="314000" />
       <workItem from="1649164155515" duration="1922000" />
+      <workItem from="1649409471010" duration="20406000" />
     </task>
     <task id="LOCAL-00001" summary="基本框架搭建">
       <created>1641109352308</created>
@@ -266,7 +834,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648984002024</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="商品信息导入ES，商品搜索功能">
+      <created>1649409790610</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1649409790610</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -306,9 +881,19 @@
     <MESSAGE value="商品模块CRUD，加入FDFS" />
     <MESSAGE value="后台对商品操作" />
     <MESSAGE value="Canal同步Mysql和Redis中的广告表数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="Canal同步Mysql和Redis中的广告表数据" />
+    <MESSAGE value="商品信息导入ES，商品搜索功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="商品信息导入ES，商品搜索功能" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ordermeal-parent/ordermeal-web/changgou-web-item/src/main/java/com/ordermeal/item/service/impl/PageServiceImpl.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.csource.fastdfs.TrackerGroup" memberName="tracker_server_index" />
