@@ -13,6 +13,7 @@
         <module>ordermeal-service-goods-api</module>
         <module>ordermeal-service-content-api</module>
         <module>ordermeal-service-search-api</module>
+        <module>ordermeal-web-item-api</module>
     </modules>
     <artifactId>ordermeal-service-api</artifactId>
 

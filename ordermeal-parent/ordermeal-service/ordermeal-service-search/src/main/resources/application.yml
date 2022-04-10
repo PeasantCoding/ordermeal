@@ -7,6 +7,8 @@ spring:
     elasticsearch:
       cluster-name: my-application
       cluster-nodes: 192.168.0.7:9300
+  main: # 设置 为true ,即 允许 同名
+    allow-bean-definition-overriding: true
 eureka:
   client:
     service-url:
@@ -27,3 +29,5 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 10000
+
+
